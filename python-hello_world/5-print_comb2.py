@@ -1,5 +1,7 @@
 for i in range(100):
-    if i < 99:
+    if i == 0:
+        print("[{:02}, ".format(i), end="")
+    elif i < 99:
         print("{:02}, ".format(i), end="")
-    else: 
-        print("{:02}\n".format(i))
+    else:
+        print("{:02}]".format(i))
