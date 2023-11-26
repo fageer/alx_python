@@ -8,4 +8,5 @@ def fibonacci_sequence(n):
     fibunacci = [0, 1]
     for i in range(2, n):
         fibunacci = fibunacci + [fibunacci[-1] + fibunacci[-2]]
+    print()
     return fibunacci
