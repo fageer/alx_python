@@ -1,5 +1,5 @@
 def raise_exception():
     try:
-        pass
-    except TypeError:
-        print("Exception raised")
+        raise_exception()
+    except TypeError as te:
+        print("Exception has been raised")
