@@ -1,6 +1,7 @@
 def multiple_returns(sentence):
     length = len(sentence)
     if length == 0:
-        return None
+        firstchar = None
     else:
-        return "Length: {} - First character: {}".format(length, sentence[0])
+        firstchar = sentence[0]
+    return length, firstchar
