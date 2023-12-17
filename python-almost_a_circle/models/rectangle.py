@@ -17,7 +17,7 @@ class Rectangle(Base):
         """STR method"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"#
     
-    
+
     @property
     def width(self):
         """Getter method for Width"""
