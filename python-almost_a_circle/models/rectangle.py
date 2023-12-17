@@ -95,8 +95,12 @@ class Rectangle(Base):
             print(f"{' ' * self.__x}{'#' * self.__width}")
             
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update method"""
         update_args = ["id", "width", "height", "x", "y"]
         for arg, value in zip(update_args,args):
             setattr(self, arg, value)
+        
+        for key, value in kwargs:
+            if key in update_args:
+                setattr(self, key, value)
