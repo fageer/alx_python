@@ -5,7 +5,7 @@ class Base:
     """class constructor"""
     def __init__(self, id=None):
         """Check if the id is none"""
-        if self.id == None:
+        if id == None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
