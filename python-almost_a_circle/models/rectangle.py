@@ -8,43 +8,55 @@ class Rectangle(Base):
         """inherit the init method from the super class"""
         super().__init__(self, id)
         """Assign each argument """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
 
     @property
     def width(self):
         """Getter method for width"""
-        return self.__width
+        return self.width
     
     
     @width.setattr
     def width(self, value):
         """Setter method for width"""
-        self.__width = value
+        self.width = value
 
     
     @property
     def height(self):
         """Getter method for height"""
-        return self.__height
+        return self.height
     
     
     @height.setattr
     def height(self, value):
         """Setter method for height"""
-        self.__height = value
+        self.height = value
 
 
     @property
     def x(self):
         """Getter method for x"""
-        return self.__x
+        return self.x
         
         
     @x.setattr
-    def height(self, value):
+    def x(self, value):
         """Setter method for x"""
-        self.__x = value
+        self.x = value
+
+    
+    @property
+    def y(self):
+        """Getter method for y"""
+        return self.y
+        
+        
+    @y.setattr
+    def y(self, value):
+        """Setter method for y"""
+        self.y = value
