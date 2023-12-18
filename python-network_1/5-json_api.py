@@ -21,6 +21,4 @@ if __name__ == "__main__":
             print(f"[{json_id}] {json_name}")
     except ValueError:
         print("Not a valid JSON")
-    
-
-    
+        
