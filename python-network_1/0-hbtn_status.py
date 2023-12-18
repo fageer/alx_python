@@ -1,5 +1,6 @@
-import requests
 """importing the requests package"""
+import requests
+
 
 if __name__ == "__main__":
     """get the body of the response"""
