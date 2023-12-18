@@ -1,1 +1,1 @@
-# All those are tasks from 0 to 6
+# Python Hello World Project
