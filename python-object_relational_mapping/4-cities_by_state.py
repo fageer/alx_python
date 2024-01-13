@@ -19,6 +19,3 @@ records = cur.fetchall()
 
 for record in records:
     print(record)
-
-conn.close()
-cur.close()
