@@ -11,7 +11,7 @@ conn = MySQLdb.connect(host='localhost',
 cur = conn.cursor()
 
 
-cur.execute("SELECT * FROM states WHERE name like 'N%'")
+cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
 
 records = cur.fetchall()
 
