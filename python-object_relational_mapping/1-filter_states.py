@@ -16,4 +16,5 @@ cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 records = cur.fetchall()
 
 for record in records:
-    print(record)
+    if record [1][0] == 'N':
+        print(record)
