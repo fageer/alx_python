@@ -11,8 +11,15 @@ conn = MySQLdb.connect(host='localhost',
 cur = conn.cursor()
 
 
-cur.execute("SELECT name FROM cities WHERE name = '{}' ORDER BY id".format(argv[4]))
+cur.execute("""SELECT GROUP_CONCAT(name ORDER BY id ASC SEPARATOR ', ')
+                FROM cities
+                JOIN states ON cities.state_id = states.id
+                WHERE states.name = %s
+                """, (argv[4], ))
 
 records = cur.fetchall()
 
-print(records)
+if records:
+    print(records)
+else:
+    print("")
