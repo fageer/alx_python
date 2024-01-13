@@ -11,9 +11,10 @@ conn = MySQLdb.connect(host='localhost',
 cur = conn.cursor()
 
 
-cur.execute("SELECT * FROM states WHERE name = LOWER('{}') ORDER BY id ASC".format(argv[4]))
+cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(argv[4]))
 
 records = cur.fetchall()
 
 for record in records:
-    print(record)
+    if record[1][0] == 'N':
+        print(record)
