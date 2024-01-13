@@ -11,9 +11,8 @@ conn = MySQLdb.connect(host='localhost',
 cur = conn.cursor()
 
 
-cur.execute("SELECT * FROM cities WHERE name = '{}' ORDER BY id".format(argv[4]))
+cur.execute("SELECT name FROM cities WHERE name = '{}' ORDER BY id".format(argv[4]))
 
 records = cur.fetchall()
 
-for record in records:
-    print(record[1])
+print(records)
