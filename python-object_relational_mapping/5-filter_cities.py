@@ -12,11 +12,10 @@ conn = MySQLdb.connect(host='localhost',
 cur = conn.cursor()
 
 
-cur.execute("""SELECT name
-                FROM cities
+cur.execute("""SELECT cities.name FROM cities
                 JOIN states ON cities.state_id = states.id
                 WHERE states.name = %s
-                ORDER BY id ASC
+                ORDER BY cities.id ASC
                 """, (argv[4], ))
 
 
