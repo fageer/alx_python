@@ -10,7 +10,13 @@ conn = MySQLdb.connect(host='localhost',
 
 cur = conn.cursor()
 
+
 cur.execute("SELECT * FROM states")
+
+records = cur.fetchall()
+
+for record in records:
+    print(record)
 
 
 conn.close()
