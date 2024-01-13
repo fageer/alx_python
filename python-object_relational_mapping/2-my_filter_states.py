@@ -11,7 +11,7 @@ conn = MySQLdb.connect(host='localhost',
 cur = conn.cursor()
 
 
-cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(argv[4]))
+cur.execute("SELECT * FROM states WHERE name = LOWER('{}') ORDER BY id ASC".format(argv[4]))
 
 records = cur.fetchall()
 
