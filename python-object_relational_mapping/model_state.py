@@ -3,9 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-""" create State class"""
 class State(Base):
-    """ create State class"""
+    """ created State class"""
     __tablename__ = 'states'
     id = Column(Integer, 
                 primary_key=True, 
