@@ -17,3 +17,7 @@ records = cur.fetchall()
 
 for record in records:
     print(record)
+
+
+cur.close()
+conn.close()
