@@ -5,6 +5,7 @@ Base = declarative_base()
 
 """ create State class"""
 class State(Base):
+    """ create State class"""
     __tablename__ = 'states'
     id = Column(Integer, 
                 primary_key=True, 
