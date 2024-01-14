@@ -20,3 +20,7 @@ cur.execute("""SELECT cities.name FROM cities
 
 
 print(", ".join(map(lambda x: x[0], cur.fetchall())))
+
+
+cur.close()
+conn.close()
