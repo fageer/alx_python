@@ -7,16 +7,15 @@ engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(argv[1],
                                                                    argv[2],
                                                                    argv[3]))
 
-Session = sessionmaker()
+Session = sessionmaker(bind=engine)
 
-session = Session(bind=engine)
+session = Session()
 Base.metadata.create_all(engine)
 
-state = session.query(State).order_by(State.id).first()
+states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
 
-if state:
+for state in states:
     print("{}: {}".format(state.id, state.name))
-else:
-    print("Nothing")
+
 
 session.close()
