@@ -12,8 +12,11 @@ Session = sessionmaker()
 session = Session(bind=engine)
 Base.metadata.create_all(engine)
 
-states = session.query(State).order_by(State.id).first()
-for state in states:
+state = session.query(State).order_by(State.id).first()
+
+if state:
     print("{}: {}".format(state.id, state.name))
+else:
+    print("Nothing")
 
 session.close()
