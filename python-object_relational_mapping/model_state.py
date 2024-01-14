@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+""" create State class"""
 class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, 
