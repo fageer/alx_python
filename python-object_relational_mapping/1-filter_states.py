@@ -18,3 +18,7 @@ records = cur.fetchall()
 for record in records:
     if record [1][0] == 'N':
         print(record)
+
+
+cur.close()
+conn.close()
