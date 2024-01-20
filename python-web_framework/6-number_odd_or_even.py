@@ -38,7 +38,7 @@ def display_nInt (n):
 
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
 def display_nOddOrEven (n):
-    return render_template("5-number.html", number = n)
+    return render_template("6-number_odd_or_even.html", number = n)
 
 
 if __name__ == '__main__':
