@@ -1,1 +1,1 @@
-# Python - Web framework Project.
+# Python Flask - Web framework Project.
