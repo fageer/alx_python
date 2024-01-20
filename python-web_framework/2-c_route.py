@@ -10,7 +10,7 @@ def display ():
 
 @app.route('/c/<text>', strict_slashes=False)
 def display_c ():
-    return "C {}".format(text)
+    return "C {}".format(text.replace("_", " "))
 
 
 @app.route('/hbnb', strict_slashes=False)
