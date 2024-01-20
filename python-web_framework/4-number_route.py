@@ -26,7 +26,7 @@ def display_python (text):
     return "Python {}".format(text.replace("_", " "))
 
 
-@app.route('/number/{int:<n>}', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def display_n (n):
     return "{} is a number".format(n)
 
