@@ -16,7 +16,7 @@ def hbnb ():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-@app.route('/python/<text>', defaults={'text': 'is cool'} strict_slashes=False)
+@app.route('/python/<text>', defaults={'text': 'is cool'}, strict_slashes=False)
 def display_c (text):
     return "C {}".format(text.replace("_", " "))
 
