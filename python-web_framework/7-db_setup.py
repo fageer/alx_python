@@ -27,19 +27,19 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     email = db.Column(db.String(100), unique=True, nullable=False)
-#################################################################
 
-# Create the database tables
+
 def create_tables():
     with app.app_context():
         db.create_all()
 
-create_tables()  # This calls the function to create tables
+create_tables()
 
 
 @app.route('/', strict_slashes=False)
 def index():
     return "Hello, ALX Flask!"
+#################################################################
 
 
 if __name__ == '__main__':
