@@ -57,6 +57,20 @@ def add_user():
 def show_users():
     users = User.query.all()
     return render_template('users.html', users=users)
+
+
+@app.route('/update_user/<int:user_id>', methods=['GET', 'POST'])
+def update_user(user_id):
+    user = User.query.get(user_id)
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        user = User.query.get(user_id)
+        user.name = name
+        user.email = email
+        db.session.commit()
+        flash('User updated successfully!')
+    return render_template('update_user.html', user=user)
 #################################################################
 
 
