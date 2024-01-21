@@ -51,6 +51,12 @@ def add_user():
         db.session.commit()
         flash("User added successfully!")
     return render_template("add_user.html")
+
+
+@app.route('/users')
+def show_users():
+    users = User.query.all()
+    return render_template("users.html", users=users)
 #################################################################
 
 
