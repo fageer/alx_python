@@ -22,7 +22,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{db_username}:{db_pass
 db = SQLAlchemy(app)
 
 ############################  TO DO 2 ##############################
-Define your USER Model class here
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    email = db.Column(db.String(100), unique=True, nullable=False)
 #################################################################
 
 # Create the database tables
