@@ -71,6 +71,16 @@ def update_user(user_id):
         db.session.commit()
         flash('User updated successfully!')
     return render_template('update_user.html', user=user)
+
+
+@app.route('/delete_user/<int:user_id>')
+def delete_user(user_id):
+    user = User.query.get(user_id)
+    if request.method == 'POST':
+        db.session.delete(user)
+        db.session.commit()
+        flash('User deleted successfully!')
+    return render_template('delete_user.html', user=user)
 #################################################################
 
 
