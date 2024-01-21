@@ -41,22 +41,22 @@ def index():
     return "Hello, ALX Flask!"
 
 
-@app.route('/add_user', methods=["GET", "POST"], strict_slashes=False)
+@app.route('/add_user', methods=['GET', 'POST'])
 def add_user():
-    if request.method == "POST":
-        name = request.form["name"]
-        email = request.form["email"]
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
         new_user = User(name=name, email=email)
         db.session.add(new_user)
         db.session.commit()
-        flash("User added successfully!")
-    return render_template("add_user.html")
+        flash('User added successfully!')
+    return render_template('add_user.html')
 
 
 @app.route('/users')
 def show_users():
     users = User.query.all()
-    return render_template("users.html", users=users)
+    return render_template('users.html', users=users)
 #################################################################
 
 
