@@ -28,7 +28,7 @@ def getData(id):
     }
 
     with open("{}.json".format(userid), "w") as jsonfile:
-        json.dump(jsondata, jsonfile, indent=4)
+        json.dump(jsondata, jsonfile)
 
 
 if __name__ == "__main__":
