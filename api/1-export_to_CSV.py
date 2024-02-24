@@ -15,18 +15,10 @@ def getData(id):
     request2 = requests.get(todourl)
     results = request2.json()
 
-    with open("{}.csv".format(userid), "w") as csvfile:
-        columnnames = ["USER_ID", "USER_NAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-        writer = csv.DictWriter(csvfile, fieldnames=columnnames)
-        writer.writeheader()
+    with open("{}.csv".format(userid), "w", newline='') as csvfile:
+        writer = csv.writer(csvfile, quoting = csv.QUOTE_ALL)
         for result in results:
-            userdict = {
-                "USER_ID": userid,
-                "USER_NAME": username,
-                "TASK_COMPLETED_STATUS": result['completed'],
-                "TASK_TITLE": result['title']
-            }
-            writer.writerow(userdict)
+            writer.writerow([userid, username, result['completed'], result['title']])
 
 
 if __name__ == "__main__":
