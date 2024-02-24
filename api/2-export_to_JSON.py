@@ -19,12 +19,15 @@ def getData(id):
 
     request2 = requests.get(todourl)
     tasks = request2.json()
+
     alldata = {}
+
     jsondata = [
             {"task": task['title'], "completed": task['completed'], "username": username}
             for task in tasks
         ]
-    alldata[str(userid)] = jsondata
+    
+    alldata[userid] = jsondata
 
     with open("{}.json".format(userid), "w") as jsonfile:
         json.dump(alldata, jsonfile)
@@ -32,7 +35,7 @@ def getData(id):
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        id = int(sys.argv[1])
+        id = sys.argv[1]
     else:
         id = 1
     getData(id)
