@@ -19,7 +19,7 @@ def getData(id):
     with open("{}.csv".format(userid), "w", newline='') as csvfile:
         writer = csv.writer(csvfile, quoting = csv.QUOTE_ALL)
         for task in tasks:
-            writer.writerow([userid, username, task['completed'], task['title']])
+            writer.writerow([userid, str(username), task['completed'], task['title']])
 
 
 if __name__ == "__main__":
