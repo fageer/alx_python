@@ -1,30 +1,20 @@
+
+
+
+
 import csv
 import requests
 import sys
 
-
-def getData(id):
-    usersurl = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    todourl = "{}/todos".format(usersurl)
-
-    request1 = requests.get(usersurl)
-    result = request1.json()
-    userid = result['id']
-    username = result['username']
-
-    request2 = requests.get(todourl)
-    tasks = request2.json()
-
-
-    with open("{}.csv".format(userid), "w", newline='') as csvfile:
-        writer = csv.writer(csvfile, quoting = csv.QUOTE_ALL)
-        for task in tasks:
-            writer.writerow([userid, str(username), task['completed'], task['title']])
-
-
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        id = str(sys.argv[1])
-    else:
-        id = 1
-    getData(id)
+    user_id = sys.argv[1]
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + "users/{}".format(user_id)).json()
+    username = user.get("username")
+    todos = requests.get(url + "todos", params={"userId": user_id}).json()
+
+    with open("{}.csv".format(user_id), "w", newline="\n") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        [writer.writerow(
+            [user_id, username, t.get("completed"), t.get("title")]
+        ) for t in todos]
