@@ -1,6 +1,7 @@
 import json
 import requests
 import sys
+"""import json, requests, sys"""
 
 
 def getData(id):
