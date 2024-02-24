@@ -5,6 +5,9 @@ import sys
 
 
 def getData(id):
+    """
+    Get data from json api and export to json file
+    """
     usersurl = "https://jsonplaceholder.typicode.com/users/{}".format(id)
     todourl = "{}/todos".format(usersurl)
 
