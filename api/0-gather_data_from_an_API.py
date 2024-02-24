@@ -29,4 +29,4 @@ if __name__ == "__main__":
         id = sys.argv[1]
     else:
         id = 1
-    getData(sys.argv[1])
+    getData(id)
