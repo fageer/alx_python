@@ -13,12 +13,12 @@ def getData(id):
     username = result['username']
 
     request2 = requests.get(todourl)
-    results = request2.json()
+    tasks = request2.json()
 
     with open("{}.csv".format(userid), "w", newline='') as csvfile:
         writer = csv.writer(csvfile, quoting = csv.QUOTE_ALL)
-        for result in results:
-            writer.writerow([userid, username, result['completed'], result['title']])
+        for task in tasks:
+            writer.writerow([userid, username, task['completed'], task['title']])
 
 
 if __name__ == "__main__":
