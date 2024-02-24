@@ -21,7 +21,7 @@ def getData(id):
         
     print("Employee {} is done with tasks({}/{}):".format(name, count, len(results)))
     for task in tasksTitles:
-        print(task)
+        print("\t{}".format(task))
 
 
 if __name__ == "__main__":
