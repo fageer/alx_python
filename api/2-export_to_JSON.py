@@ -27,7 +27,7 @@ def getData(id):
             for task in tasks
         ]
     
-    alldata[userid] = jsondata
+    alldata[str(userid)] = jsondata
 
     with open("{}.json".format(userid), "w") as jsonfile:
         json.dump(alldata, jsonfile)
@@ -38,4 +38,4 @@ if __name__ == "__main__":
         id = sys.argv[1]
     else:
         id = 1
-    getData(id)
+    getData(int(id))
