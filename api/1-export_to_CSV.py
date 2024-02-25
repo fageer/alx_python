@@ -1,6 +1,7 @@
 import csv
 import requests
 import sys
+import os
 
 def get_data(user_id):
     # Construct URLs for user and user's tasks
@@ -24,6 +25,8 @@ def get_data(user_id):
             writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             for task in tasks:
                 writer.writerow([user_id, username, task['completed'], task['title']])
+        
+        print("Number of tasks in CSV:", len(tasks))
     except requests.exceptions.RequestException as e:
         print("Error:", e)
     except KeyError:
